@@ -19,7 +19,7 @@ def prefixify(value, prefix=None):
     Converts to a version that uses prefixes, if prefix given. Examples:
 
     >>> prefixify('one two three ', ' ')
-    'joinPath("one", prefix, "two", prefix, "three", prefix)'
+    'pathJoin("one", prefix, "two", prefix, "three", prefix)'
     >>> prefixify(' ', ' ')
     'prefix'
     >>> prefixify('this', ' ')
@@ -33,7 +33,7 @@ def prefixify(value, prefix=None):
     vals = ['"{0}"'.format(v) for v in value.split(prefix)]
     vals = intersperse(vals, 'prefix')
     vals = [v for v in vals if v != '""']
-    return 'joinPath({0})'.format(', '.join(vals))
+    return 'pathJoin({0})'.format(', '.join(vals))
 
 def make_changes(orig, curr, prefix = None):
     '''
@@ -85,7 +85,7 @@ class LmodEnv(cli.Application):
     'Save then load an environment, noting the changes.'
 
     prefix = cli.SwitchAttr(['-p', '--prefix'], help='A common prefix to factor out')
-    
+
     @cli.positional(cli.ExistingFile)
     def main(self, filename=None):
         if self.nested_command is not None:
@@ -114,7 +114,7 @@ class Save(cli.Application):
 class Load(cli.Application):
 
     prefix = cli.SwitchAttr(['-p', '--prefix'], help='A common prefix to factor out')
-    
+
     @cli.positional(cli.ExistingFile)
     def main(self, filename):
         with open(filename) as f:
