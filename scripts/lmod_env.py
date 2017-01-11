@@ -70,10 +70,10 @@ def make_changes(orig, curr, prefix = None):
         if curr_val != orig_val:
             if curr_val.startswith(orig_val):
                 yield 'append_path("{0}", {1})'.format(name,
-                                        prefixify(curr_val[len(orig_val):], prefix))
+                        prefixify(curr_val[len(orig_val):].strip(':'), prefix))
             elif curr_val.endswith(orig_val):
                 yield 'prepend_path("{0}", {1})'.format(name,
-                                        prefixify(curr_val[:-len(orig_val)], prefix))
+                        prefixify(curr_val[:-len(orig_val)].strip(':'), prefix))
             else:
                 yield 'pushenv("{0}", {1})'.format(name, prefixify(curr_val, prefix))
 
