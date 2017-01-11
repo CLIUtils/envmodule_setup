@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## anaconda modulefile
+##
+## modulefiles/use.own.  Generated from use.own.in by configure.
+##
+proc ModulesHelp { } {
+    global version
+
+    puts stderr "\tThis module file will add anaconda $version to the path; it can be unloaded."
+}
+
+module-whatis   "Adds anaconda to your path"
+
+# for Tcl script use only
+set version  4.2
+
+eval set  [ array get env HOME ]
+prepend-path PATH $HOME/anaconda
+
