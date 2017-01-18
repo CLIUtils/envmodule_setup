@@ -8,7 +8,7 @@ family('anaconda')
 
 whatis("loads the anaconda environment")
 
-prefix = "/opt/anaconda"
+local prefix = "/opt/anaconda"
 
 prepend_path("PATH", pathJoin(prefix, "/bin"))
 

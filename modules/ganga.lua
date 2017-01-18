@@ -6,12 +6,10 @@ whatis("loads the ganga environment")
 
 family('anaconda')
 
-prefix = "/opt/anaconda/envs/Ganga"
+local prefix = "/opt/anaconda/envs/Ganga"
 
 pushenv("CONDA_DEFAULT_ENV", "Ganga")
-pushenv("CONDA_PREFIX", "/opt/anaconda/envs/Ganga")
-pushenv("PS1", [[(Ganga) [\ua@\h \W]\$ ]])
+pushenv("CONDA_PREFIX", prefix)
 
-
-prepend_path("PATH", pathJoin(prefix, "/bin"))
+prepend_path("PATH", pathJoin(prefix, "bin"))
 
