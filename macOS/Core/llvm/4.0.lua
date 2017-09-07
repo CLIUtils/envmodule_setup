@@ -2,7 +2,7 @@ help([[
 This is the modulefile for the LLVM compiler
 ]])
 
-local version = "4.0"
+local version = myModuleVersion()
 
 whatis("Name: LLVM " .. version)
 whatis("Version " .. version)
