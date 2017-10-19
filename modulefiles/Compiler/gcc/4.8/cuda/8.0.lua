@@ -11,5 +11,6 @@ prepend_path("LD_LIBRARY_PATH", pathJoin(prefix, "lib64"))
 
 setenv("CUDA_HOME", prefix)
 setenv("CUDALOCATION", prefix)
+setenv("CUDA_PATH", prefix)
 
 
