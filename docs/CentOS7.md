@@ -1,4 +1,4 @@
-s is a guide to setting up Lmod (lua environment modules) on a CentOS system. I've used a similar procedure to set them up on a Mac, as well, so this is still a useful guide to the workings of Lmod if you use a different system; mostly paths will change. On a Mac, you'll want to install `Lmod` from the `science` tap in `brew`.
+This is a guide to setting up Lmod (lua environment modules) on a CentOS7 system. I've used a similar procedure to set them up on a Mac, as well, so this is still a useful guide to the workings of Lmod if you use a different system; mostly paths will change. On a Mac, you'll want to install `Lmod` from the `science` tap in `brew`.
 
 There are several good pages covering environment modules (TCL version), but not many that use the newer Lua syntax. This document aims to fill that roll.
 
@@ -77,5 +77,3 @@ Some common commands you'll want are:
 * `module` Describes the available subcommands
 
 > Note: a timesaver is available as the `ml` command; it is short for `module load`, but it works with any of the other module subcommands too. Without a package or subcommand it will list the in-use packages. It also supports unloading as `ml -package` too!
-
-Created with Dillinger.io.
